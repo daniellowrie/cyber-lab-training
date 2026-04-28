@@ -1,0 +1,13 @@
+---
+- name: Project Genesis Initial Setup
+  hosts: training_rigs
+  tasks:
+    - name: Create a training workspace directory
+      ansible.builtin.file:
+        path: ~/lab_workspace
+        state: directory
+        mode: '0755'
+
+    - name: "The A-Team Message"
+      ansible.builtin.debug:
+        msg: "I love it when a plan comes together! Lab workspace is ready."
